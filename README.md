@@ -6,7 +6,7 @@ This project is a fun and user-friendly to-do app built with Electron. Users can
 ## Team members
 1. Pranav Satish [https://github.com/prnv0L]
 2. Abhinand S J [https://github.com/abhinandsj]
-## Link to product walkthrough
+## Product walkthrough
 
 https://user-images.githubusercontent.com/117537359/236640874-bf702350-a9d9-48da-8db1-3e9098a5b70b.mp4
 
