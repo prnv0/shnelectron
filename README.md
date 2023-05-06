@@ -7,10 +7,12 @@ This project is a fun and user-friendly to-do app built with Electron. Users can
 1. Pranav Satish [https://github.com/prnv0L]
 2. Abhinand S J [https://github.com/abhinandsj]
 ## Link to product walkthrough
-[link to video]
+
+https://user-images.githubusercontent.com/117537359/236640874-bf702350-a9d9-48da-8db1-3e9098a5b70b.mp4
+
 ## How it Works ?
 1. Explaining the working of project
-2. Embed video of project demo
+
 ## Libraries used
 node v16.17.0
 
@@ -19,11 +21,11 @@ electron 24.2.0
 ag-grid (for grid display)
 
 ## How to configure
-Clone this repository 
+1.Clone this repository 
 ```git clone 'https://github.com/prnv0/shnelectron'```
-Change directory to shnelectron 
+2.Change directory to shnelectron 
 ```cd shnelectron```
-Install node module ag-grid 
+3.Install node module ag-grid 
 ```npm install ag-grid-community```
 ## How to Run
 To run the app: 
