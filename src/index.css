@@ -3,9 +3,39 @@ body {
   height: 100%;
   margin: 0;
 }
+@font-face {
+  font-family: 'Rocher';
+  src: url(RocherColorGX.woff2);
+}
+
+body {
+  font-family: 'Rocher';
+  text-align: center;
+  font-size: 50px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("backgroundjs.png");
+  background-color: #cccccc;
+}
+
+h1 {
+  margin: 0;
+}
+@font-palette-values --Mint {
+  font-family: Rocher;
+  base-palette: 7;
+}
+
+.mint {
+  font-palette: --Mint;
+}
 #grid {
   width: 100%;
   flex: 1;
+  opacity: 85%;
 }
 .container {
   margin: auto;
@@ -55,6 +85,95 @@ body {
   font-size: 1.25rem;
   justify-content: center;
   align-items: center;
-  background-color: #ef4444;
-  border-radius: 12px;
+  background-color: rgba(126, 126, 126, 0.0);
+  border-radius: 15px;
+}
+
+
+.btn1{
+  position: relative;
+  width: 160px;
+  height: 50px;
+  line-height: 48px;
+  background: #000;
+  opacity: 85%;
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 4px;
+  text-decoration: none;
+  -webkit-box-reflect: below 1px -webkit-linear-gradient(transparent, #0004);
+}
+
+.btn1::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #fb0094, #00f, #0f0, 
+  #ff0, #f00, #fb0094, #00f, #0f0, #ff0, #f00);
+  background-size: 400%;
+  opacity: 0;
+  filter: blur(20px);
+  transition: 0.5s;
+}
+.btn1::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #fb0094, #00f, #0f0, 
+  #ff0, #f00, #fb0094, #00f, #0f0, #ff0, #f00);
+  background-size: 400%;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.btn1:hover::before,
+.btn1:hover::after{
+  opacity: 1;
+  animation: animate 20s linear infinite;
+}
+
+@keyframes animate{
+  0%{
+      background-position: 0 0;
+  }
+  50%{
+      background-position: 300% 0;
+  }
+  100%{
+      background-position: 0 0;
+  }
+}
+
+.btn1 span{
+  position: absolute;
+  display: block;
+  top: 1px;
+  left: 1px;
+  right: 1px;
+  bottom: 1px;
+  text-align: center;
+  background: #0c0c0c;
+  color: rgba(255, 255, 255, 1);
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.btn1:hover span{
+  color: rgba(255, 255, 255, 1);
+}
+
+.btn1 span::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: rgba(255, 255, 255, 0.1);
 }

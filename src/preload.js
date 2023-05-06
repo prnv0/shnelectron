@@ -1,2 +1,10 @@
-// See the Electron documentation for details on how to use preload scripts:
-// https://www.electronjs.org/docs/latest/tutorial/process-model#preload-scripts
+const { contextBridge, ipcRenderer } = require("electron");
+
+contextBridge.exposeInMainWorld("electronAPI", {
+  saveToFile(data) {
+    return ipcRenderer.invoke("save-to-file", data);
+  },
+  restoreFromFile() {
+    return ipcRenderer.invoke("restore-from-file");
+  },
+});

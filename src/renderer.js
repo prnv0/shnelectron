@@ -8,7 +8,7 @@ let rowData = [];
 const columnDefs = [
   { field: "task", editable: true, flex: 1 },
   {
-    field: "Status",
+    field: "completed",
     width: 120,
     cellRenderer(params) {
       const input = document.createElement("input");
@@ -29,7 +29,7 @@ const columnDefs = [
     cellRenderer(params) {
       const button = document.createElement("button");
 
-      button.textContent = "✕";
+      button.textContent = "🗑️";
       button.classList.add("btn", "remove-btn");
       button.addEventListener("click", () => removeTodo(params.rowIndex));
 
@@ -42,7 +42,7 @@ const gridOptions = {
   rowData,
 };
 const saveBtn = document.getElementById("save-btn");
-const clearBtn = document.getElementById("clear-btn");
+const restoreBtn = document.getElementById("restore-btn");
 const addBtn = document.getElementById("add-btn");
 const addTodo = () => {
   rowData = [...rowData, { task: "New Task", completed: false }];
@@ -54,15 +54,24 @@ const removeTodo = (rowIndex) => {
   });
   gridOptions.api.setRowData(rowData);
 };
-const clearFromFile = async () => {
-  
+const saveToFile = () => {
+  window.electronAPI.saveToFile(JSON.stringify(rowData));
+};
+const restoreFromFile = async () => {
+  const result = await window.electronAPI.restoreFromFile();
+
+  if (result.success) {
+    rowData = JSON.parse(result.data);
+    gridOptions.api.setRowData(rowData);
+  }
 };
 const setupGrid = () => {
   const gridDiv = document.getElementById("grid");
 
   new Grid(gridDiv, gridOptions);
   addBtn.addEventListener("click", addTodo);
-  clearBtn.addEventListener("click", clearFromFile);
+  saveBtn.addEventListener("click", saveToFile);
+  restoreBtn.addEventListener("click", restoreFromFile);
 };
 
 document.addEventListener("DOMContentLoaded", setupGrid);
