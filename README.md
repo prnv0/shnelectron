@@ -23,10 +23,13 @@ ag-grid (for grid display)
 ## How to configure
 1.Clone this repository 
 ```git clone 'https://github.com/prnv0/shnelectron'```
+
 2.Change directory to shnelectron 
 ```cd shnelectron```
+
 3.Install node module ag-grid 
 ```npm install ag-grid-community```
+
 ## How to Run
 To run the app: 
 ```npm run start```
