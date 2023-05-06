@@ -30,3 +30,8 @@ ag-grid (for grid display)
 ## How to Run
 To run the app: 
 ```npm run start```
+
+
+To run set up click the link and download the setup file:
+https://drive.google.com/file/d/16slpv_iutdZW3oHkiTRVnca_dMORXf8x/view?usp=share_link
+Double click the file to open and run the Todo desktop app
