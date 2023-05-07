@@ -11,7 +11,7 @@ This project is a fun and user-friendly to-do app built with Electron. Users can
 https://user-images.githubusercontent.com/117537359/236640874-bf702350-a9d9-48da-8db1-3e9098a5b70b.mp4
 
 ## How it Works ?
-1. Explaining the working of project
+On running the program electron creates a new window with a ag-grid for keeping track of tasks. Users can add,remove,save,or restore tasks to the list using ag-grid's predefined functions. On clicking save the file explorer opensand the data is saved as a .json file. When restoring the users can choose the tasks to restore from the file system.
 
 ## Libraries used
 node v16.17.0
@@ -34,6 +34,7 @@ ag-grid (for grid display)
 To run the app: 
 ```npm run start```
 
+OR  
 
-The desktop setup.exe file is available in the following link. Download and double click to run :
+Download the final windows application. Download and double click to run :
 https://drive.google.com/file/d/16slpv_iutdZW3oHkiTRVnca_dMORXf8x/view?usp=share_link
